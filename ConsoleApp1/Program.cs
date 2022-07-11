@@ -7,18 +7,19 @@ namespace Bronze1
     {
         static void Main(string[] args)
         {
-            int N = int.Parse(Console.ReadLine().ToString()); // 파일 개수
-            char[] std = Console.ReadLine().ToCharArray(); // 기준이 될 첫번째 패턴 입력값
+			int n = int.Parse(Console.ReadLine()); //파일개수
 
-            for (int i = 0; i < N - 1; i++)
-            {
-                char[] FileName = Console.ReadLine().ToCharArray();
-                for (int j = 0; j < std.Length; j++)
-                {
-                    std[j] = (std[j] != FileName[j]) ? '?' : std[j];
-                }
-            }
-            Console.WriteLine(std);
-        }
+			string[] arr = Console.ReadLine().Split();
+			int[] arr2 = Array.ConvertAll(arr, s => int.Parse(s));
+			Array.Sort(arr2);
+			if (n == 1)
+			{
+				Console.WriteLine(arr2[0] * arr2[0]);
+			}
+			else
+			{
+				Console.WriteLine(arr2[n - 1] * arr2[0]);
+			}
+		}
     }
 }
