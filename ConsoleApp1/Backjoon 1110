@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+
+namespace Bronze1
+{
+
+    class Program
+    {
+        static void Main()
+        {
+            string N = Console.ReadLine();
+         
+            if (int.Parse(N) < 10)
+            {
+                N = N + 0;
+            }
+            int originNumber = int.Parse(N);
+            
+            int cycle = 0;
+
+            while (true)
+            {
+                char[] ab = N.ToCharArray();
+                int a = int.Parse(ab[0].ToString());
+                int b = int.Parse(ab[1].ToString());
+                int sum = a + b;
+                char[] c = sum.ToString().ToCharArray();
+                int cl = c.Length; 
+                N = b.ToString() + int.Parse(c[cl - 1].ToString());
+                
+                cycle++;
+                
+                int changedNumber = int.Parse(N);
+                if (originNumber == changedNumber) break;
+            }
+
+            Console.WriteLine(cycle);
+        }
+    }
+}
