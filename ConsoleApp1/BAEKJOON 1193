@@ -1,0 +1,42 @@
+using System;
+
+namespace Bronze1
+{
+    class MathFractions
+    {
+        static void Main()
+        {         
+            string input = Console.ReadLine();
+
+            int checkNumber = int.Parse(input);
+
+            int count = 1;
+            int range = 1;
+            int firstNumber = 1;
+            while(true)
+            {               
+                if (checkNumber <= range)
+                    break;
+
+                count += 1;
+                firstNumber = range + 1;
+                range += count;
+            }
+
+            int up = 1;
+            int down = 1;
+            if(count % 2 == 1)
+            {
+                up = count - (checkNumber - firstNumber);
+                down = 1 + (checkNumber - firstNumber);
+            } else if(count % 2 == 0)
+            {
+                up = 1 + (checkNumber - firstNumber);
+                down = count - (checkNumber - firstNumber);
+            }
+
+            string print = string.Format("{0}/{1}", up, down);
+            Console.WriteLine(print);
+        }
+    }
+}
