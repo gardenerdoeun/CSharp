@@ -1,0 +1,32 @@
+using System;
+using System.Linq;
+using System.Text;
+
+namespace Bronze1
+{
+    class MathFractions
+    {
+        static void Main()
+        {
+
+            StringBuilder sb = new StringBuilder();
+            for (; ; )
+            {
+                string s = Console.ReadLine();
+                if (s[0] - '0' == 0)
+                {
+                    break;
+                }
+                if (s == new string(s.ToCharArray().Reverse().ToArray()))
+                {
+                    sb.Append("yes\n");
+                }
+                else
+                {
+                    sb.Append("no\n");
+                }
+            }
+            Console.Write(sb);
+        }
+    }
+}
