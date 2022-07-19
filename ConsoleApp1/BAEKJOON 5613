@@ -1,0 +1,38 @@
+using System;
+
+namespace Bronze3
+{
+    class Program
+    {
+        static void Main()
+        { // 백준 5613 계산기 프로그램 
+            int N = int.Parse(Console.ReadLine());
+
+            while (true)
+            {
+                string c = Console.ReadLine();
+
+                switch (c)
+                {
+                    case "+":
+                        N += int.Parse(Console.ReadLine());
+                        break;
+                    case "-":
+                        N -= int.Parse(Console.ReadLine());
+                        break;
+                    case "*":
+                        N *= int.Parse(Console.ReadLine());
+                        break;
+                    case "/":
+                        N /= int.Parse(Console.ReadLine());
+                        break;
+                }
+                if (c == "=")
+                    break;
+            }
+
+            Console.WriteLine(N);
+            
+        }
+    }
+}
