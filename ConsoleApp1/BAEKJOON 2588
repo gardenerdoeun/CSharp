@@ -1,0 +1,26 @@
+using System;
+
+namespace Bronze5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string strFirstNum = Console.ReadLine();
+            string strSecondNum = Console.ReadLine();
+
+            int nFirstNum = int.Parse(strFirstNum);
+            int nSum = 0;
+            for (int i = 2; i >= 0; i--)
+            {
+                char chSecondNum = strSecondNum[i];
+                int nSecondNum = int.Parse(chSecondNum.ToString());
+                int nResult = nFirstNum * nSecondNum;
+                Console.WriteLine(nResult);
+                nSum = nSum + (nResult * (int)Math.Pow(10, 2 - i));
+            }
+
+            Console.WriteLine(nSum);
+        }
+    }
+}
