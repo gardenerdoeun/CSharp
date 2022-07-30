@@ -1,0 +1,23 @@
+using System;
+
+namespace Bronze5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine()
+                  .Replace("c=", "1")
+                  .Replace("c-", "2")
+                  .Replace("dz=", "3")
+                  .Replace("d-", "4")
+                  .Replace("lj", "5")
+                  .Replace("nj", "6")
+                  .Replace("s=", "7")
+                  .Replace("z=", "8");
+
+            string print = input.Length.ToString();
+            Console.WriteLine(print);
+        }
+    }
+}
