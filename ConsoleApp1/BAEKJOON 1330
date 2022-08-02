@@ -1,0 +1,29 @@
+using System;
+using System.IO;
+
+namespace Bronze5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+            string[] strNumbers = input.Split(' ');
+            int nNumA = int.Parse(strNumbers[0]);
+            int nNumB = int.Parse(strNumbers[1]);
+
+            if (nNumA > nNumB)
+            {
+                Console.WriteLine(">");
+            }
+            else if (nNumA < nNumB)
+            {
+                Console.WriteLine("<");
+            }
+            else if (nNumA == nNumB)
+            {
+                Console.WriteLine("==");
+            }
+        }
+    }
+}
