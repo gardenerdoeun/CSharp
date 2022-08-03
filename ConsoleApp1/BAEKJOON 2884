@@ -1,0 +1,41 @@
+using System;
+using System.IO;
+
+namespace Bronze5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //입력받고, 각각 분리하고, int형으로 바꾸기
+            string strInput = Console.ReadLine();
+            string[] strNums = strInput.Split(' ');
+            int nHour = int.Parse(strNums[0]);
+            int nMin = int.Parse(strNums[1]);
+
+            // 입력한 시간의 45분 전으로 바꾸고, 출력하기
+            // 예외
+            // 1. nHour == 0 && nMin < 45 
+            // 2. nHour != 0 && nMin < 45
+
+            if (nMin < 45)
+            {
+                if (nHour == 0)
+                {
+                    nHour = 23;
+                }
+                else
+                {
+                    nHour -= 1;
+                }
+                nMin += 15;
+            }
+            else
+            {
+                nMin -= 45;
+            }
+
+            Console.WriteLine("{0} {1}", nHour, nMin);
+        }
+    }
+}
