@@ -1,0 +1,38 @@
+using System;
+using System.IO;
+
+namespace Bronze5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamReader sr = new StreamReader(Console.OpenStandardInput());
+            StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
+
+            string strTestCase = sr.ReadLine();
+            int nTestCase = int.Parse(strTestCase); // 2
+
+            for (int i = 0; i < nTestCase; i++) // 2번 반복
+            {
+                string strInput = sr.ReadLine(); // "3 ABC"
+                string[] strArr = strInput.Split(' '); // ["3", "ABC"]
+                int n = int.Parse(strArr[0]); // 3
+
+                for (int j = 0; j < strArr[1].Length; j++)
+                {
+                    for (int k = 0; k < n; k++)
+                    {
+                        sw.Write(strArr[1][j]);
+                    }
+                }
+
+                sw.WriteLine();
+            }
+
+            sw.Flush();
+            sr.Close();
+            sw.Close();
+        }
+    }
+}
