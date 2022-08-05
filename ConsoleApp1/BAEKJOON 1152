@@ -1,0 +1,32 @@
+using System;
+using System.IO;
+
+namespace Bronze5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamReader sr = new StreamReader(Console.OpenStandardInput());
+            StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
+
+            string strInput = sr.ReadLine();
+            if (strInput == "1 2 3 4 5 6 7 8")
+            {
+                sw.WriteLine("ascending");
+            }
+            else if (strInput == "8 7 6 5 4 3 2 1")
+            {
+                sw.WriteLine("descending");
+            }
+            else
+            {
+                sw.WriteLine("mixed");
+            }
+
+            sw.Flush();
+            sr.Close();
+            sw.Close();
+        }
+    }
+}
