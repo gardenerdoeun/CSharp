@@ -1,0 +1,39 @@
+using System;
+using System.IO;
+
+namespace Bronze5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamReader sr = new StreamReader(Console.OpenStandardInput());
+            StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
+
+            string strInputA = sr.ReadLine();
+            int nNumA = int.Parse(strInputA);
+
+            string strInputB = sr.ReadLine();
+            int nNumB = int.Parse(strInputB);
+
+            string strInputC = sr.ReadLine();
+            int nNumC = int.Parse(strInputC);
+
+            int nSum = nNumA * nNumB * nNumC; // 17037300
+            string strSum = nSum.ToString(); // "17037300"
+
+            int[] nArr = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+            for (int i = 0; i < strSum.Length; i++)
+            {
+                nArr[nSum % 10]++; //0, 0, 3, 7, 3, 0, 7, 1
+                nSum /= 10; // 1703730, 170373, 
+            }
+
+            for (int j = 0; j < 10; j++)
+            {
+                sw.WriteLine(nArr[j]);
+            }
+        }
+    }
+}
