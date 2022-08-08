@@ -1,0 +1,22 @@
+using System;
+using System.IO;
+
+namespace Bronze5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = int.Parse(Console.ReadLine());
+
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = N; i >= 1; i--)
+            {
+                sb.AppendLine(i.ToString());
+            }
+
+            Console.WriteLine(sb.ToString());
+        }
+    }
+}
