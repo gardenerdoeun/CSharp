@@ -1,0 +1,30 @@
+using System;
+
+namespace Bronze5
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+            string strTestCase = Console.ReadLine();
+            int nTestCase = int.Parse(strTestCase);
+
+            int[] nArray = new int[nTestCase];
+
+            for (int i = 0; i < nTestCase; i++)
+            {
+                string strInput = Console.ReadLine(); 
+                string[] strNum = strInput.Split(' '); 
+                int nNumA = int.Parse(strNum[0].ToString()); 
+                int nNumB = int.Parse(strNum[1].ToString()); 
+
+                nArray[i] = nNumA + nNumB;
+            }
+            
+            for (int i = 0; i < nTestCase; i++)
+            {
+                Console.WriteLine(nArray[i]);
+            }
+   }
+	}
+}
